@@ -1,0 +1,3 @@
+hasher.exe %*
+pause
+
