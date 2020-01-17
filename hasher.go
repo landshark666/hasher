@@ -14,6 +14,8 @@ import (
 	"os"
 )
 
+const version string = "1.0"
+
 type HashFunc struct {
 	Name     string
 	HashFunc crypto.Hash
@@ -62,7 +64,7 @@ func doFile(filename string) {
 		if alg.HashFunc.Available() {
 			h := alg.HashFunc.New()
 			hash := doHash(h, filename)
-			fmt.Printf("    %-16s: %s\n", alg.Name, hash)
+			fmt.Printf("    %-10s: %s\n", alg.Name, hash)
 		}
 	}
 
@@ -73,6 +75,8 @@ func main() {
 	if len(os.Args) < 2 {
 		log.Fatal("No filenames given, aborting")
 	}
+
+	fmt.Printf("Hasher v%s - YMMV\n\n", version)
 
 	for _, filename := range os.Args[1:] {
 		doFile(filename)
