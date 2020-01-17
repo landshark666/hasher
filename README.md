@@ -5,3 +5,5 @@ I needed a (Windows) program I could drag and drop files onto and generate hashe
 
 Do what you want with it.
 
+A windows bat file is included so files can be dragged and dropped onto it and a command prompt will remain open with the hashesh.
+
